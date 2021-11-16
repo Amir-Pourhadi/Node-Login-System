@@ -3,7 +3,7 @@
 <div class="text-center center-div" id="login">
   <div class="container w-25 border py-5">
     <div class="title pb-5">
-      <h2 class="fw-2"><%= title%></h2>
+      <h2 class="fw-2"><%= locals.title ? title : "Login System" %></h2>
       <span>Log in for the existing user</span>
     </div>
     <form action="#">
