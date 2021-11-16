@@ -2,6 +2,9 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  background: url("/assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .center-div {
