@@ -9,6 +9,7 @@ app.use(express.json({ extended: false }));
 
 // Serve static assets
 app.use("/static", express.static(path.join(__dirname, "public")));
+app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 // Render ejs views
 app.set("view engine", "ejs");
