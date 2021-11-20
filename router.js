@@ -26,4 +26,15 @@ router.get("/dashboard", (req, res) => {
   }
 });
 
+// Logout User
+router.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      res.send("Error");
+    } else {
+      res.render("base", { title: "Express", logout: true });
+    }
+  });
+});
+
 module.exports = router;
