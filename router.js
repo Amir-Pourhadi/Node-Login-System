@@ -12,6 +12,7 @@ router.post("/login", (req, res) => {
   if (email === credential.email && password === credential.password) {
     req.session.user = email;
     res.redirect("/route/dashboard");
+
   } else {
     res.send("Invalid Email or Password");
   }
@@ -21,6 +22,7 @@ router.post("/login", (req, res) => {
 router.get("/dashboard", (req, res) => {
   if (req.session.user) {
     res.render("dashboard", { user: req.session.user });
+    
   } else {
     res.send("Unauthorize User");
   }
@@ -30,7 +32,9 @@ router.get("/dashboard", (req, res) => {
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
-      res.send("Error");
+      res.send("Error! Check console!");
+      console.err(err);
+
     } else {
       res.render("base", { title: "Logout", logout: true });
     }
