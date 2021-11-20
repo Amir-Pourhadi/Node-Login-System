@@ -33,6 +33,4 @@ app.get("/", (req, res) => {
 });
 
 // Listen on port
-app.listen(port, () => {
-  console.log(`Server started on http://localhost:${port}`);
-});
+app.listen(port);
