@@ -22,6 +22,9 @@ app.set("view engine", "ejs");
 // Session
 app.use(session({ secret: uuidv4(), resave: false, saveUninitialized: true }));
 
+// Routes
+app.use("/route", require("./router"));
+
 // home route
 app.get("/", (req, res) => {
   res.render("base", { title: "Login System" });
