@@ -11,9 +11,18 @@ router.post("/login", (req, res) => {
   const { email, password } = req.body;
   if (email === credential.email && password === credential.password) {
     req.session.user = email;
-    res.redirect("/dashboard");
+    res.redirect("/route/dashboard");
   } else {
-    res.send("Invalid Credentials");
+    res.send("Invalid Email or Password");
+  }
+});
+
+// Dashboard Route
+router.get("/dashboard", (req, res) => {
+  if (req.session.user) {
+    res.render("dashboard", { user: req.session.user });
+  } else {
+    res.send("Unauthorize User");
   }
 });
 
