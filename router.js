@@ -30,6 +30,7 @@ router.get("/dashboard", (req, res) => {
 
 // Logout User
 router.get("/logout", (req, res) => {
+  // Destroy the session
   req.session.destroy((err) => {
     if (err) {
       res.send("Error! Check console!");
