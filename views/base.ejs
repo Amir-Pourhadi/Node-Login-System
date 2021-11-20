@@ -1,24 +1,24 @@
 <%- include("header") -%>
 
 <div class="text-center center-div" id="login">
-  <div class="container w-25 border py-5">
-    <div class="title pb-5">
+  <div class="container w-25 border shadow py-5">
+    <div class="title mb-3">
       <h2 class="fw-2"><%= locals.title ? title : "Login System" %></h2>
-      <span>Log in for the existing user</span>
       <% if(locals.logout) { %>
         <div class="alert alert-success text-center">Log out Successfully...!</div>
       <% } %>
+        <div class="mt-4"><b>Log in for the existing user<b></div>
     </div>
-    <form action="/route/login" method="POST" class="mt-2">
+    <form action="/route/login" method="POST">
       <div class="form-group">
-        <small class="form-text text-muted text-left">Register Email Address</small>
-        <input type="email" name="email" class="form-control" placeholder="Example@mail.com" />
+        <small class="form-text text-muted text-left">Email Address</small>
+        <input type="email" name="email" class="form-control" placeholder="admin@gmail.com" />
       </div>
       <div class="form-group">
-        <small class="form-text text-muted text-left">Enter Your Password</small>
-        <input type="password" name="password" class="form-control" placeholder="Strong Password" />
+        <small class="form-text text-muted text-left">Password</small>
+        <input type="password" name="password" class="form-control" placeholder="admin123" />
       </div>
-      <button type="submit" class="btn btn-success rounded-pill mt-4">Submit</button>
+      <button type="submit" class="btn btn-success mt-4">Submit</button>
     </form>
   </div>
 </div>

@@ -32,7 +32,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       res.send("Error");
     } else {
-      res.render("base", { title: "Express", logout: true });
+      res.render("base", { title: "Logout", logout: true });
     }
   });
 });
