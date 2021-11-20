@@ -6,8 +6,8 @@
       <h2 class="fw-2"><%= locals.title ? title : "Login System" %></h2>
       <span>Log in for the existing user</span>
     </div>
-    <form action="#">
-      <div class="form-group pt-3">
+    <form action="/route/login" method="POST" class="pt-3">
+      <div class="form-group">
         <input type="email" class="form-control" placeholder="Example@mail.com" name="email" />
         <small class="form-text text-muted text-left">Register Email Address</small>
       </div>
